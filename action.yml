@@ -1,0 +1,23 @@
+
+name: 'Delete ghcr.io package tag'
+description: 'Delete a tagged package from ghcr.io'
+inputs:
+  package-name:
+    description: 'Package name'
+    required: true
+  tag:
+    description: 'Package tag'
+    required: true
+  github-token:
+    description: 'GitHub Personal Access Token with package deletion permissions.'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install packages
+      run: pip install requests
+    - name: Delete image from ghcr.io
+      run: python ${{ github.action_path }}/docker-cleanup.py ${{ inputs.package-name }} ${{ inputs.tag }} ${{ inputs.github-token }}
