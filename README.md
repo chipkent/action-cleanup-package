@@ -1,6 +1,7 @@
 # action-cleanup-package
 
-This is a GitHub Action to delete GitHub packages.  It is very useful to clean up unneeded Docker images in ghcr.io after a PR is closed. 
+This is a GitHub Action to delete GitHub packages.  It is very useful to clean up unneeded Docker 
+images in the GitHub Container Registry (ghcr.io) after a PR is closed. 
 
 ```
 # Delete Docker images after PR merge
