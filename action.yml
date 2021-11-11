@@ -19,5 +19,7 @@ runs:
         python-version: '3.8'
     - name: Install packages
       run: pip install requests
+      shell: bash
     - name: Delete image from ghcr.io
       run: python ${{ github.action_path }}/docker-cleanup.py ${{ inputs.package-name }} ${{ inputs.tag }} ${{ inputs.github-token }}
+      shell: bash
