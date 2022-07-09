@@ -65,7 +65,7 @@ def delete_tagged_container(package_name, tag, org):
 import sys
 
 if len(sys.argv) != 5:
-    raise SystemExit(f"Usage: docker-cleanup.py <package_name> <tag> <github_token> <org-optional>\nArgs: {sys.argv}")
+    raise SystemExit(f"Usage: docker-cleanup.py <package_name> <tag> <github_token> <org (optional)>\nArgs: {sys.argv}")
 
 package_name = sys.argv[1]
 tag = sys.argv[2]
