@@ -11,6 +11,10 @@ inputs:
   github-token:
     description: 'GitHub Personal Access Token with package deletion permissions.'
     required: true
+  github-org:
+    description: 'If hosted in an organization, provide it here'
+    default: ''
+    required: true
 runs:
   using: "composite"
   steps:
@@ -21,5 +25,5 @@ runs:
       run: pip install requests
       shell: bash
     - name: Delete image from ghcr.io
-      run: python ${{ github.action_path }}/docker-cleanup.py ${{ inputs.package-name }} ${{ inputs.tag }} ${{ inputs.github-token }}
+      run: python ${{ github.action_path }}/docker-cleanup.py ${{ inputs.package-name }} ${{ inputs.tag }} ${{ inputs.github-token }} ${{ inputs.github-org }}
       shell: bash
