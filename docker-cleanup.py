@@ -14,7 +14,7 @@ def get_package_versions(package_name, package_type, org):
 
     if org:
         # https://docs.github.com/en/rest/packages#list-packages-for-an-organization=
-        package_url = f"https://api.github.com/user/packages/orgs/{org}/packages/{package_type}/{package_name}/versions"
+        package_url = f"https://api.github.com/orgs/{org}/packages/{package_type}/{package_name}/versions"
     else:
         # https://docs.github.com/en/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
         package_url = f"https://api.github.com/user/packages/{package_type}/{package_name}/versions"
@@ -35,7 +35,7 @@ def delete_package_version(package_name, package_type, id, org):
     
     if org:
         # https://docs.github.com/en/rest/packages#delete-package-version-for-an-organization=
-        delete_url = f"https://api.github.com/user/packages/orgs/{org}/packages/{package_type}/{package_name}/versions/{id}"
+        delete_url = f"https://api.github.com/orgs/{org}/packages/{package_type}/{package_name}/versions/{id}"
     else:
         # https://docs.github.com/en/rest/reference/packages#delete-a-package-version-for-the-authenticated-user
         delete_url = f"https://api.github.com/user/packages/{package_type}/{package_name}/versions/{id}"
