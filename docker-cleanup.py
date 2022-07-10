@@ -14,7 +14,7 @@ def get_package_versions(package_name, package_type, org):
 
     if org:
         # https://docs.github.com/en/rest/packages#list-packages-for-an-organization=
-        f"https://api.github.com/user/packages/orgs/{org}/packages/{package_type}/{package_name}/versions"
+        package_url = f"https://api.github.com/user/packages/orgs/{org}/packages/{package_type}/{package_name}/versions"
     else:
         # https://docs.github.com/en/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
         package_url = f"https://api.github.com/user/packages/{package_type}/{package_name}/versions"
