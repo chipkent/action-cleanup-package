@@ -1,4 +1,3 @@
-
 name: 'Delete ghcr.io package tag'
 description: 'Delete a tagged package from ghcr.io'
 inputs:
@@ -18,9 +17,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4
       with:
-        python-version: '3.8'
+        python-version: '3.9'
     - name: Install packages
       run: pip install requests
       shell: bash
